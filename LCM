@@ -1,0 +1,27 @@
+
+int main()
+{
+    int a, b, lcm;
+    printf("Input first number: ");
+    scanf("%d", &a);
+    printf("Input second number: ");
+    scanf("%d",&b);
+    lcm = LCM(a,b);    // function call
+    printf("LCM of %d and %d = %d", a, b, lcm);
+    return 0;
+}
+
+int LCM(int a, int b)  // function definition
+{
+    static int temp = 1;    
+    if(temp%a == 0 && temp%b == 0)
+    {
+        return temp;
+    }
+    else
+    {
+        temp++;
+        LCM(a,b);
+        return temp;
+    }
+}
